@@ -23,52 +23,7 @@ $jmltot = 0;
     <br><br><br>
     <main class="container border py-2 mt-2 custom-margin table-responsive">
         
-        <div class="row">
-            <div class="col">
-                <div class="border p-3 my-3 bg-danger text-light rounded">
-                    <h4 class="text-light">Laporan Harian</h4>
-                    <form class="d-flex" method="POST" action="">
-                        <input class="form-control me-2" type="date" name="tgl">
-                        <input list="nama_petugas" id="np" name="np" autocomplete="off" placeholder="Nama Petugas" class="form-control me-2 mx-2" />
-                        <datalist id="nama_petugas">
-                            <?php
-                            include "config/config.php";
-                            $sqlp = "SELECT * FROM user";
-                            $resp = mysqli_query($mysqli, $sqlp);
-                            while ($dtp = mysqli_fetch_array($resp)) {
-                            ?>
-                                <option value="<?= $dtp['Username'] ?>"><?= $dtp['Username'] ?></option>
-                            <?php
-                            }
-                            ?>
-                        </datalist>
-                        <button class="btn btn-light" type="submit">Tampilkan</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col">
-                <div class="border p-3 my-3 bg-danger text-light rounded">
-                    <h4 class="text-light">Laporan Bulanan</h4>
-                    <form class="d-flex" method="POST" action="">
-                        <input class="form-control me-2" type="month" name="tgl">
-                        <input list="Username" id="np" name="np" autocomplete="off" placeholder="Nama Petugas" class="form-control me-2 mx-2" />
-                        <datalist id="Username">
-                            <?php
-                            include "config/config.php";
-                            $sqlp = "SELECT * FROM user";
-                            $resp = mysqli_query($mysqli, $sqlp);
-                            while ($dtp = mysqli_fetch_array($resp)) {
-                            ?>
-                                <option value="<?= $dtp['Username'] ?>"><?= $dtp['Username'] ?></option>
-                            <?php
-                            }
-                            ?>
-                        </datalist>
-                        <button class="btn btn-light" type="submit">Tampilkan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+      
 
         <!-- pencarian -->
 
@@ -119,8 +74,54 @@ $jmltot = 0;
         </div>
 
         <!-- akhir pencarian -->
-
+  <div class="row">
+            <div class="col">
+                <div class="border p-3 my-3 bg-danger text-light rounded">
+                    <h4 class="text-light">Laporan Harian</h4>
+                    <form class="d-flex" method="POST" action="">
+                        <input class="form-control me-2" type="date" name="tgl">
+                        <input list="nama_petugas" id="np" name="np" autocomplete="off" placeholder="Nama Petugas" class="form-control me-2 mx-2" />
+                        <datalist id="nama_petugas">
+                            <?php
+                            include "config/config.php";
+                            $sqlp = "SELECT * FROM user";
+                            $resp = mysqli_query($mysqli, $sqlp);
+                            while ($dtp = mysqli_fetch_array($resp)) {
+                            ?>
+                                <option value="<?= $dtp['Username'] ?>"><?= $dtp['Username'] ?></option>
+                            <?php
+                            }
+                            ?>
+                        </datalist>
+                        <button class="btn btn-light" type="submit">Tampilkan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border p-3 my-3 bg-danger text-light rounded">
+                    <h4 class="text-light">Laporan Bulanan</h4>
+                    <form class="d-flex" method="POST" action="">
+                        <input class="form-control me-2" type="month" name="tgl">
+                        <input list="Username" id="np" name="np" autocomplete="off" placeholder="Nama Petugas" class="form-control me-2 mx-2" />
+                        <datalist id="Username">
+                            <?php
+                            include "config/config.php";
+                            $sqlp = "SELECT * FROM user";
+                            $resp = mysqli_query($mysqli, $sqlp);
+                            while ($dtp = mysqli_fetch_array($resp)) {
+                            ?>
+                                <option value="<?= $dtp['Username'] ?>"><?= $dtp['Username'] ?></option>
+                            <?php
+                            }
+                            ?>
+                        </datalist>
+                        <button class="btn btn-light" type="submit">Tampilkan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <table class="table table-hover table-striped table-sm">
+
             <thead class="bg-danger text-white">
                 <tr>
                     <th class="py-2 px-3 rounded-start" width="55px">No.</th>
@@ -184,7 +185,7 @@ $jmltot = 0;
     </main>
     <style>
         .custom-margin {
-            margin-right: 10px;
+            margin-right: 0px;
             /* Adjust the value as needed */
         }
     </style>

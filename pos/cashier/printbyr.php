@@ -38,7 +38,7 @@ $npet=$dtpetugas['Username'];
 <section class="sheet">
 <center>
     <br>
-    <h2 style="margin:0px">BD MART</h2>
+    <h2 style="margin:0px">TABE MART</h2>
     SMKN 1 KADIPATEN<br>
     Telp. 088222333001 <br>
 </center>

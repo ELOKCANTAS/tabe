@@ -16,7 +16,7 @@ require_once('partials/_head.php');
         <?php require_once('partials/_topnav.php'); ?>
 
         <!-- Header -->
-        <main class="container border py-3">
+        <main class="container border py-3 table-responsive">
             <br><br><br>
             <!-- Pencarian -->
             <div class="row">

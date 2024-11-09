@@ -40,7 +40,7 @@ require_once('partials/_head.php');
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-              <h1 class="text-white">Kasir BD MART</h1>
+              <h1 class="text-white">TABE MART</h1>
             </div>
           </div>
         </div>

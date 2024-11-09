@@ -2,7 +2,7 @@
 session_start();
 if(isset($_GET['tgl'])){
  $tgl=$_GET['tgl'];
- $np = isset($_GET['np']) ? $_GET['np'] : '';
+ 
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,12 +14,12 @@ if(isset($_GET['tgl'])){
 <section class="sheet">
 <center>
     <br>
-    <h2 style="margin:0px">BD MART</h2>
+    <h2 style="margin:0px">TABE MART</h2>
     Jl. Siliwangi No. 30 Kadipaten Majalengka<br>
     Telp. 088222333001 <br><br>
     <?php  
     if(isset($_GET['tgl'])){
-        $np = isset($_GET['np']) ? $_GET['np'] : '';
+        
         $tgl=$_GET['tgl'];
         $tg=substr($tgl,8,2);
         $bl=substr($tgl,5,2);
@@ -33,17 +33,12 @@ if(isset($_GET['tgl'])){
         }
     }else{
         $tanggal="";
-        $np="";
+        
     }
     ?>
         <b>Laporan Penjualan <?= $tanggal ?></b>
         <?php 
-        if($np<>""){
-        ?>
-        <br>
-        <b>Nama Petugas : <?= $np ?></b>
-        <?php
-        }
+       
         ?>
 </center>
 <table width="100%" cellspacing="0">
@@ -59,7 +54,7 @@ if(isset($_GET['tgl'])){
 			<th width="70px" align="right">Harga</th>
 			<th width="40px" align="right">Jml</th>
 			<th width="80px" align="right">Total</th>
-			<th width="120px" style="padding-left: 10px;">Nama Petugas</th>
+			
 		</tr>
 		<tr>
 			<td colspan="8"><?php echo str_repeat("-", 130) ?></td>
@@ -68,7 +63,7 @@ if(isset($_GET['tgl'])){
 	<tbody>
 		<?php  
 		include "config/config.php";
-		$sql="select penjualan.tanggal, penjualan.UserID, penjualan.Username, detail_penjualan.kode_produk, detail_penjualan.NamaProduk, detail_penjualan.harga, detail_penjualan.jumlah, detail_penjualan.harga*detail_penjualan.jumlah as tot from detail_penjualan, penjualan where penjualan.penjualan_id=detail_penjualan.penjualan_id and penjualan.tanggal like '$tgl%' and penjualan.Username like '$np%'";
+		$sql="select penjualan.tanggal, penjualan.UserID, penjualan.Username, detail_penjualan.kode_produk, detail_penjualan.NamaProduk, detail_penjualan.harga, detail_penjualan.jumlah, detail_penjualan.harga*detail_penjualan.jumlah as tot from detail_penjualan, penjualan where penjualan.penjualan_id=detail_penjualan.penjualan_id and penjualan.tanggal like '$tgl%'";
 		
 		$result=mysqli_query($mysqli,$sql);
 		$no= 1;
@@ -87,7 +82,7 @@ if(isset($_GET['tgl'])){
 				<td align="right"><?= $hp ?></td>
 				<td align="right" class="px-3"><?= $jp ?></td>
 				<td align="right" class="px-3"><?= $tot ?></td>
-				<td style="padding-left: 10px;"><?= $data['Username'] ?></td>
+				
 		</tr>
 
 		<?php  

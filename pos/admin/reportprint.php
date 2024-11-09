@@ -14,7 +14,7 @@ if(isset($_GET['tgl'])){
 <section class="sheet">
 <center>
 	<br>
-	<h2 style="margin:0px">BD MART</h2>
+	<h2 style="margin:0px">TABE MART</h2>
 	Jl. Siliwangi No. 30 Kadipaten Majalengka<br>
 	Telp. 088222333001 <br><br>
 	<?php  

@@ -50,7 +50,7 @@ require_once('partials/_analytics.php');
 
             <div class="col-xl-4 col-lg-6">
               <?php
-              $ret = "SELECT COUNT(*) AS total_orders FROM Penjualan";
+              $ret = "SELECT COUNT(*) AS total_orders FROM penjualan";
               $stmt = $mysqli->prepare($ret);
               $stmt->execute();
               $res = $stmt->get_result();

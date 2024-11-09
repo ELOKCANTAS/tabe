@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Okt 2024 pada 12.34
+-- Waktu pembuatan: 07 Nov 2024 pada 01.01
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -240,7 +240,15 @@ INSERT INTO `detail_penjualan` (`detail_id`, `kode_produk`, `NamaProduk`, `harga
 (222, 'SYRK-4802', 'Mie sedap', 2000, 1, 199, '2024-10-23 10:17:51'),
 (223, 'WGKD-4865', 'Teh Pucuk', 4000, 2, 199, '2024-10-23 10:17:55'),
 (224, 'QIYU-9270', 'Mie sedap spicy', 2000, 2, 200, '2024-10-23 10:22:06'),
-(225, 'NZAP-7823', 'Roti Aoka', 5000, 1, 200, '2024-10-23 10:22:09');
+(225, 'NZAP-7823', 'Roti Aoka', 5000, 1, 200, '2024-10-23 10:22:09'),
+(226, 'SYRK-4802', 'Mie sedap', 2000, 5, 202, '2024-10-24 00:02:41'),
+(227, 'XBOQ-0278', 'Power f', 1000, 1, 202, '2024-10-24 00:02:55'),
+(228, 'QIYU-9270', 'Mie sedap spicy', 2000, 4, 203, '2024-10-24 02:20:33'),
+(229, 'NZAP-7823', 'Roti Aoka', 5000, 7, 204, '2024-11-06 23:56:37'),
+(230, 'CDXL-0486', 'Ice cream cool orange', 2000, 1, 204, '2024-11-06 23:56:44'),
+(231, 'GABJ-7165', 'bengbeng', 2000, 7, 204, '2024-11-06 23:56:49'),
+(232, 'SFZP-6234', 'Sosis kenzler singles', 9000, 1, 204, '2024-11-06 23:56:54'),
+(233, 'MOVX-4501', 'Siip bite 19 gram', 11400, 2, 204, '2024-11-06 23:56:59');
 
 --
 -- Trigger `detail_penjualan`
@@ -278,8 +286,7 @@ INSERT INTO `pelanggan` (`PelangganID`, `kode_pelanggan`, `NamaPelanggan`, `Alam
 (2, '', 'dini', 'leuwiseeng', '08997766', '2024-08-23 12:33:31.592445'),
 (4, '', 'Aas', 'panyingkiran', '089977669', '2024-08-29 08:31:16.533730'),
 (5, '', 'nabil', 'Majalengka', '09876599', '2024-09-03 02:40:40.417031'),
-(6, '', 'tedi', 'Rajagaluh', '08799880', '2024-09-03 12:43:30.728479'),
-(9, '', 'sultan muhammad', 'leuwiseeng', '0896672222', '2024-10-23 10:16:55.276914');
+(6, '', 'tedi', 'Rajagaluh', '08799880', '2024-09-03 12:43:30.728479');
 
 -- --------------------------------------------------------
 
@@ -463,7 +470,10 @@ INSERT INTO `penjualan` (`penjualan_id`, `tanggal`, `total_harga`, `bayar`, `Pel
 (198, '2024-10-23 11:57:35', 22000, 50000, 0, 134, 'miku'),
 (199, '2024-10-23 12:17:31', 29000, 50000, 0, 135, 'tes'),
 (200, '2024-10-23 12:21:59', 9000, 20000, 9, 136, 'tes'),
-(201, '2024-10-23 12:24:54', NULL, NULL, NULL, 0, NULL);
+(201, '2024-10-23 12:24:54', NULL, NULL, NULL, 0, NULL),
+(202, '2024-10-24 02:02:30', 11000, 20000, 0, 135, 'tess'),
+(203, '2024-10-24 04:20:28', 8000, 10000, 0, 135, 'tess'),
+(204, '2024-11-07 00:56:32', 82800, 100000, 2, 136, 'tes');
 
 -- --------------------------------------------------------
 
@@ -486,19 +496,19 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`ProdukID`, `NamaProduk`, `harga`, `stok`, `ProdukImg`, `kode_produk`, `kategori`) VALUES
-(1, 'Ice Cream Taro ', 3000.00, 289, 'e36a53ac-3d32-4fa4-95ea-8e1f8ca25c0c.jpg', '1122a', 'snack'),
-(7, 'Mie sedap', 2000.00, 108, '9a786f53aa40326bc300fb8ebcba1fa8.jpeg', 'SYRK-4802', 'makanan'),
-(9, 'Roti Aoka', 5000.00, 77, 'images.jpeg', 'NZAP-7823', 'snack'),
-(10, 'Mie sedap spicy', 2000.00, 209, '3eb6ce9087870268834019003daf0805.jpg', 'QIYU-9270', 'makanan'),
-(11, 'Teh Pucuk', 4000.00, 88, 'eeac6a08-301d-401c-81f9-5085e544fec7.jpg', 'WGKD-4865', 'minuman'),
-(12, 'Ice Cream Cup Coklat', 5000.00, 31, '20092989_1.jpeg', 'VFTR-1206', 'makanan'),
-(13, 'bengbeng', 2000.00, 81, 'db572b217ce298e397ea8fc452302f8a.jpeg', 'GABJ-7165', 'snack'),
+(1, 'Ice Cream Taro ', 3000.00, 369, 'e36a53ac-3d32-4fa4-95ea-8e1f8ca25c0c.jpg', '1122a', 'snack'),
+(7, 'Mie sedap', 2000.00, 163, '9a786f53aa40326bc300fb8ebcba1fa8.jpeg', 'SYRK-4802', 'makanan'),
+(9, 'Roti Aoka', 5000.00, 270, 'images.jpeg', 'NZAP-7823', 'snack'),
+(10, 'Mie sedap spicy', 2000.00, 405, '3eb6ce9087870268834019003daf0805.jpg', 'QIYU-9270', 'makanan'),
+(11, 'Teh Pucuk', 4000.00, 200, 'eeac6a08-301d-401c-81f9-5085e544fec7.jpg', 'WGKD-4865', 'minuman'),
+(12, 'Ice Cream Cup Coklat', 5000.00, 231, '20092989_1.jpeg', 'VFTR-1206', 'makanan'),
+(13, 'bengbeng', 2000.00, 174, 'db572b217ce298e397ea8fc452302f8a.jpeg', 'GABJ-7165', 'snack'),
 (14, 'Teh Gelas', 1000.00, 282, 'd5dd7f75-50a9-42d8-b72a-836ce98a2aa5.jpg', 'NBYR-8519', 'makanan'),
-(15, 'Ice cream cool orange', 2000.00, 95, 'a0e118b6-3378-47d8-b0a6-c1b5bbd8e3fd.jpg', 'CDXL-0486', 'snack'),
-(16, 'Power f', 1000.00, 99, '5efc0666-708b-4072-8f49-c62c2cffa134.png', 'XBOQ-0278', 'minuman'),
-(17, 'Sosis kenzler singles', 9000.00, 41, 'images (1).jpeg', 'SFZP-6234', 'makanan'),
+(15, 'Ice cream cool orange', 2000.00, 94, 'a0e118b6-3378-47d8-b0a6-c1b5bbd8e3fd.jpg', 'CDXL-0486', 'snack'),
+(16, 'Power f', 1000.00, 98, '5efc0666-708b-4072-8f49-c62c2cffa134.png', 'XBOQ-0278', 'minuman'),
+(17, 'Sosis kenzler singles', 9000.00, 140, 'images (1).jpeg', 'SFZP-6234', 'makanan'),
 (18, 'Ice cream crunchy chocolate blueberry', 5000.00, 96, 'CrunchyChocoBlueberryprod.png', 'TZAP-2914', 'snack'),
-(19, 'Siip bite 19 gram', 11400.00, 80, 'images (2).jpeg', 'MOVX-4501', 'snack'),
+(19, 'Siip bite 19 gram', 11400.00, 78, 'images (2).jpeg', 'MOVX-4501', 'snack'),
 (20, 'Ice cream choco berry', 2000.00, 200, 'images (3).jpeg', 'JWDF-0824', 'snack'),
 (21, 'ice coklat', 2000.00, 93, 'images (3).jpeg', 'QUBL-7459', 'snack'),
 (22, 'Tissue Nice', 5000.00, 199, 'images (4).jpeg', 'PMEF-1652', 'perlengkapan rumah');
@@ -540,7 +550,16 @@ INSERT INTO `tambah_stok` (`tambah_id`, `tanggal`, `kode_produk`, `jumlah`) VALU
 (17, '2024-10-16 09:26:20', 'QIYU-9270', 50),
 (18, '2024-10-16 12:59:29', 'MOVX-4501', 50),
 (19, '2024-10-21 06:56:46', '1122a', 30),
-(20, '2024-10-23 04:35:02', 'QIYU-9270', 200);
+(20, '2024-10-23 04:35:02', 'QIYU-9270', 200),
+(21, '2024-10-24 02:24:46', '1122a', 80),
+(22, '2024-10-24 02:25:02', 'SYRK-4802', 60),
+(23, '2024-10-24 02:25:17', 'NZAP-7823', 200),
+(24, '2024-10-24 02:25:34', 'QIYU-9270', 200),
+(25, '2024-10-24 02:25:46', 'WGKD-4865', 100),
+(26, '2024-10-24 02:28:04', 'VFTR-1206', 200),
+(27, '2024-10-24 02:28:21', 'GABJ-7165', 100),
+(28, '2024-10-24 02:28:40', 'SFZP-6234', 100),
+(29, '2024-10-24 04:20:02', 'WGKD-4865', 12);
 
 -- --------------------------------------------------------
 
@@ -632,7 +651,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `detail_penjualan`
 --
 ALTER TABLE `detail_penjualan`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
@@ -644,7 +663,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
+  MODIFY `penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -656,7 +675,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `tambah_stok`
 --
 ALTER TABLE `tambah_stok`
-  MODIFY `tambah_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `tambah_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

@@ -46,7 +46,7 @@ require_once('partials/_head.php');
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <a href="add_staff.php" class="btn btn-outline-success"><i class="fas fa-user-plus"></i>Tambah Petugas</a>
+              <a href="add_staff.php" class="btn btn-outline-danger"><i class="fas fa-user-plus"></i>Tambah Petugas</a>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush">

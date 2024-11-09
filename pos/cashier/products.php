@@ -48,17 +48,17 @@ require_once('partials/_head.php');
           <div class="card shadow">
             <div class="card-header border-0">
               
-              <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#tambahstok">[+] Stok</button>
+              <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#tambahstok">[+] Stok</button>
 
               <!-- Search bar -->
               <form method="GET" class="form-inline my-2 my-lg-0 float-right">
                 <input class="form-control mr-sm-2" type="search" placeholder="Cari Produk" aria-label="Search" name="search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cari</button>
               </form>
 
               <!-- Kategori dropdown -->
               <div class="btn-group">
-                <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   Kategori
                 </button>
                 <ul class="dropdown-menu">

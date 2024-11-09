@@ -45,7 +45,7 @@ require_once('partials/_head.php');
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <a href="add_customer.php" class="btn btn-outline-success">
+              <a href="add_customer.php" class="btn btn-outline-danger">
                 <i class="fas fa-user-plus"></i>
                 Tambah Pelanggan
               </a>

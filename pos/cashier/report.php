@@ -21,34 +21,16 @@ $jmltot = 0;
     <?php require_once('partials/_sidebar.php'); ?>
 
     <br><br><br>
-    <main class="container border py-2 mt-2 custom-margin">
+    <main class="container border py-2 mt-2 custom-margin table-responsive">
         
-        <div class="row">
-            <div class="col">
-                <div class="border p-3 my-3 bg-danger text-light rounded">
-                    <h4 class="text-light">Laporan Harian</h4>
-                    <form class="d-flex" method="POST" action="">
-                        <input class="form-control me-2 mx-2" type="date" name="tgl">
-                        <button class="btn btn-light" type="submit">Tampilkan</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col">
-                <div class="border p-3 my-3 bg-danger text-light rounded">
-                    <h4 class="text-light">Laporan Bulanan</h4>
-                    <form class="d-flex" method="POST" action="">
-                        <input class="form-control me-2 mx-2" type="month" name="tgl">
-                        <button class="btn btn-light" type="submit">Tampilkan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+      
 
         <!-- pencarian -->
 
         <div class="row">
             <?php
             if (isset($_POST['tgl'])) {
+               
                 $tgl = $_POST['tgl'];
                 $tg = substr($tgl, 8, 2);
                 $bl = substr($tgl, 5, 2);
@@ -70,21 +52,49 @@ $jmltot = 0;
                 $sql = "SELECT penjualan.tanggal, penjualan.UserID, penjualan.Username, detail_penjualan.kode_produk, detail_penjualan.NamaProduk, detail_penjualan.harga, detail_penjualan.jumlah, detail_penjualan.harga*detail_penjualan.jumlah AS tot 
                         FROM detail_penjualan 
                         JOIN penjualan ON penjualan.penjualan_id = detail_penjualan.penjualan_id
-                        WHERE penjualan.tanggal LIKE '$tgl%'
+                        WHERE penjualan.tanggal LIKE '$tgl%' 
                         ORDER BY penjualan.tanggal DESC";
                 $result = mysqli_query($mysqli, $sql);
                 $no = 1;
                 $jmltot = 0;
             } else {
                 $tanggal = "";
+                
             }
             ?>
-            <div class="col-sm-12"><h5>Laporan Penjualan Terbaru <?= $tanggal ?></h5></div>
+            <div class="col-sm-8"><h5>Laporan Penjualan Terbaru <?= $tanggal ?></h5></div>
+            <?php
+            
+            ?>
+
         </div>
 
         <!-- akhir pencarian -->
-
+  <div class="row">
+            <div class="col">
+                <div class="border p-3 my-3 bg-danger text-light rounded">
+                    <h4 class="text-light">Laporan Harian</h4>
+                    <form class="d-flex" method="POST" action="">
+                        <input class="form-control me-2 mx-2" type="date" name="tgl">
+                        
+                       
+                        <button class="btn btn-light" type="submit">Tampilkan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border p-3 my-3 bg-danger text-light rounded">
+                    <h4 class="text-light">Laporan Bulanan</h4>
+                    <form class="d-flex" method="POST" action="">
+                          <input class="form-control me-2 mx-2" type="month" name="tgl">
+                       
+                        <button class="btn btn-light" type="submit">Tampilkan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <table class="table table-hover table-striped table-sm">
+
             <thead class="bg-danger text-white">
                 <tr>
                     <th class="py-2 px-3 rounded-start" width="55px">No.</th>
@@ -94,7 +104,7 @@ $jmltot = 0;
                     <th class="py-2 text-end" width="100px">Harga</th>
                     <th class="py-2 px-3 text-end" width="100px">Jumlah</th>
                     <th class="py-2 px-3 text-end" width="100px">Total</th>
-                    <th class="py-2 text-start rounded-end" width="200px">Nama Petugas</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -113,7 +123,7 @@ $jmltot = 0;
                         <td align="right"><?= $hp ?></td>
                         <td align="right" class="px-3"><?= $jp ?></td>
                         <td align="right" class="px-3"><?= $tot ?></td>
-                        <td><?= $data['Username'] ?></td>
+                        
                     </tr>
 
                 <?php
@@ -148,7 +158,7 @@ $jmltot = 0;
     </main>
     <style>
         .custom-margin {
-            margin-right: 10px;
+            margin-right: 0px;
             /* Adjust the value as needed */
         }
     </style>
